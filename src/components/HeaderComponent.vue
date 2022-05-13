@@ -79,8 +79,12 @@ export default {
         &:hover {
         color: #0282F9}
       } 
-      }
     }
+  }
+
+  .active {
+    border-bottom: 2px solid #0282F9;
+  }
   
 
 </style>

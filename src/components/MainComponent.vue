@@ -1,7 +1,9 @@
 <template>
 
   <main>
-    m
+    <div class=container>
+      <h1> --/ Content goes here \-- </h1>
+    </div>
   </main>
   
 </template>
@@ -14,5 +16,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+  main {
+    display: flex;
+    align-items: center;
+    background-color: #1C1C1C;
+    height: 180px;
+  }
+
+  h1 {
+    color: #FFFFFF;
+  }
 
 </style>
