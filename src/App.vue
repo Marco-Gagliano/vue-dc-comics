@@ -3,7 +3,9 @@
     
     <HeaderComponent/>
     <MainComponent/>
+    <ShopComponent/>
     <FooterComponent/>
+
   </div>
 </template>
 
@@ -11,14 +13,15 @@
 
 import HeaderComponent from './components/HeaderComponent'
 import MainComponent from './components/MainComponent'
+import ShopComponent from './components/ShopComponent'
 import FooterComponent from './components/FooterComponent'
-
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
     MainComponent,
+    ShopComponent,
     FooterComponent
   }
 }

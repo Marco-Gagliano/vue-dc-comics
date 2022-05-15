@@ -2,7 +2,9 @@
 
   <main>
     <div class=container>
+
       <h1> --/ Content goes here \-- </h1>
+
     </div>
   </main>
   
@@ -10,7 +12,6 @@
 
 <script>
 export default {
-
   name: 'MainComponents'
 }
 </script>
@@ -21,7 +22,7 @@ export default {
     display: flex;
     align-items: center;
     background-color: #1C1C1C;
-    height: 180px;
+    height: 174px;
   }
 
   h1 {

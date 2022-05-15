@@ -3,46 +3,12 @@
   <header>
     <div class="container d-flex justify-content-between align-items-center">
       <img src="../assets/img/dc-logo.png" alt="">
+
       <nav>
         <ul class="d-flex">
-          <li>
-            <a href="#">characters</a>
-          </li>
 
-          <li class="active">
-            <a href="#">comics</a>
-          </li>
-
-          <li>
-            <a href="#">movies</a>
-          </li>
-
-          <li>
-            <a href="#">tv</a>
-          </li>
-
-          <li>
-            <a href="#">games</a>
-          </li>
-
-          <li>
-            <a href="#">collectibles</a>
-          </li>
-
-          <li>
-            <a href="#">videos</a>
-          </li>
-
-          <li>
-            <a href="#">fans</a>
-          </li>
-
-          <li>
-            <a href="#">news</a>
-          </li>
-
-          <li>
-            <a href="#">shop</a>
+          <li :class="{'active' : menu.isActive}" v-for="(menu, index) in HeaderMenu" :key="`menu-${index}`">
+            <a :href="menu.href">{{menu.name}}</a>
           </li>
 
         </ul>
@@ -54,37 +20,97 @@
 </template>
 
 <script>
-export default {
 
-  name:'HeaderComponent'
+export default {
+  name:'HeaderComponent',
+
+  data() {
+    return {
+      HeaderMenu: [
+        {
+          name: 'characters',
+          href: '#',
+          isActive: false
+        },
+        
+        {
+          name: 'comics',
+          href: '#',
+          isActive: true
+        },
+
+        {
+          name: 'movies',
+          href: '#',
+          isActive: false
+        },
+
+        {
+          name: 'tv',
+          href: '#',
+          isActive: false
+        },
+
+        {
+          name: 'games',
+          href: '#',
+          isActive: false
+        },
+
+        {
+          name: 'collectibles',
+          href: '#',
+          isActive: false
+        },
+
+        {
+          name: 'videos',
+          href: '#',
+          isActive: false
+        },
+
+        {
+          name: 'fans',
+          href: '#',
+          isActive: false
+        },
+
+        {
+          name: 'news',
+          href: '#',
+          isActive: false
+        },
+
+        {
+          name: 'shop',
+          href: '#',
+          isActive: false
+        },
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 
+  @import '../assets/style/vars';
+
   header {
-    
     margin: 20px 0;
   }
 
-  ul {
-    list-style: none;
+  a {
+    padding: 0px 10px ;
+    color: #334B5F;
 
-    li {
-      padding: 0px 10px ;
-
-      a {
-        text-decoration: none;
-        color: #334B5F;
-        &:hover {
-        color: #0282F9}
-      } 
+    &:hover {
+    color: $primary-color
     }
-  }
+  } 
 
   .active {
-    border-bottom: 2px solid #0282F9;
+    border-bottom: 5px solid $primary-color;
   }
   
-
 </style>
