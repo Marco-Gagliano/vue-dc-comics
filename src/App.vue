@@ -26,7 +26,8 @@ export default {
     MainComponent,
     ShopComponent,
     FooterComponent
-  }
+  },
+
 }
 </script>
 

@@ -181,16 +181,11 @@ export default {
 
   .social-media a{
     margin-left: 18px;
-
   }
 
   .follow {
     font-size: 22px;
     color: $primary-color
   }
-  // .social 
-  //   height: 100px;
-  //   background-color: chocolate;
-  // 
 
 </style>

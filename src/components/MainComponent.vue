@@ -2,86 +2,62 @@
 
   <main>
     <div class="container">
-      <div class="row row-cols-lg-6 row-cols-sm-3 row-cols-2">
-
-        <div class="col pb-4">
-          <a href="#">
-            <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2020/09/AV1976_01_300-001_HD_5f738f6e39ddd7.18205602.jpg?tok=VdYdJ01" alt="Digital Comics Link">
-          </a>
-          <h4>batman</h4>
-        </div>
-        
-        <div class="col pb-4">
-          <a href="#">
-            <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2020/09/AV1976_01_300-001_HD_5f738f6e39ddd7.18205602.jpg?tok=VdYdJ01" alt="Digital Comics Link">
-          </a>
-          <h4>batman</h4>
-        </div>
-
-        <div class="col pb-4">
-          <a href="#">
-            <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2020/09/AV1976_01_300-001_HD_5f738f6e39ddd7.18205602.jpg?tok=VdYdJ01" alt="Digital Comics Link">
-          </a>
-          <h4>batman</h4>
-        </div>
-
-        <div class="col pb-4">
-          <a href="#">
-            <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2020/09/AV1976_01_300-001_HD_5f738f6e39ddd7.18205602.jpg?tok=VdYdJ01" alt="Digital Comics Link">
-          </a>
-          <h4>batman</h4>
-        </div>
-
-        <div class="col pb-4">
-          <a href="#">
-            <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2020/09/AV1976_01_300-001_HD_5f738f6e39ddd7.18205602.jpg?tok=VdYdJ01" alt="Digital Comics Link">
-          </a>
-          <h4>batman</h4>
-        </div>
-        
-        <div class="col pb-4">
-          <a href="#">
-            <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2020/09/AV1976_01_300-001_HD_5f738f6e39ddd7.18205602.jpg?tok=VdYdJ01" alt="Digital Comics Link">
-          </a>
-          <h4>batman</h4>
-        </div>
-
-      </div>
+      
+      <ComicCard  v-for="(comic, index) in dataCard" 
+                  :key="`comic${index}`"
+                  :comicImg="comic.thumb"
+                  :comicTitle="comic.series"
+                  :comicPrice="comic.price"
+      />
+    
     </div>
+
+    <div class="load-more d-flex justify-content-around">
+      <a href="#">load more</a>
+    </div>
+
   </main>
   
 </template>
 
 <script>
+
+import ComicCard from './ComicCard.vue';
+import dataCard from '../assets/data/dataCard'
+
 export default {
-  name: 'MainComponents'
+  
+  name: 'MainComponents',
+
+  components: {ComicCard},
+
+  data(){
+
+    return {
+      dataCard
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 
+  @import '../assets/style/vars';
+
   main {
-    display: flex;
-    align-items: center;
     background-color: #1C1C1C;
-    padding: 40px 0px;
-    
+    padding: 20px 0px;
   }
 
-  .comic-book {
+  .container {
     display: flex;
     flex-wrap: wrap;
   }
 
-  img {
-    height: 100%;
-    width: 100%;
-    padding: 30px 18px 0px 0px;
-  }
-
-  h4 {
+  a {
     color: #FFFFFF;
-    margin-top: 20px
+    background-color: $primary-color;
+    padding: 5px 55px;
   }
 
 </style>
